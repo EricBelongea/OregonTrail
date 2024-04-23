@@ -35,7 +35,7 @@ namespace OregonTrail.Migrations
 
                     b.HasKey("CaravanId");
 
-                    b.ToTable("Caravan");
+                    b.ToTable("Caravan", (string)null);
                 });
 
             modelBuilder.Entity("OregonTrail.Models.Passanger", b =>
@@ -64,7 +64,7 @@ namespace OregonTrail.Migrations
 
                     b.HasIndex("WagonId");
 
-                    b.ToTable("Passanger");
+                    b.ToTable("Passanger", (string)null);
                 });
 
             modelBuilder.Entity("OregonTrail.Models.Wagon", b =>
@@ -92,7 +92,7 @@ namespace OregonTrail.Migrations
 
                     b.HasIndex("CaravanId");
 
-                    b.ToTable("Wagon");
+                    b.ToTable("Wagon", (string)null);
                 });
 
             modelBuilder.Entity("OregonTrail.Models.Passanger", b =>

@@ -2,6 +2,7 @@
 using OregonTrail.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
@@ -11,13 +12,21 @@ namespace OregonTrail.Models
 {
     public class CaravanContext : DbContext
     {
+        public CaravanContext()
+        { }
+
+        public CaravanContext(DbContextOptions<CaravanContext> options) : base(options) { }
+
         public DbSet<Passanger> Passangers;
         public DbSet<Wagon> Wagons;
+        public DbSet<Caravan> Caravans;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
+                optionsBuilder.LogTo(message => Debug.WriteLine(message))
+                            .EnableSensitiveDataLogging();
                 optionsBuilder.UseSqlServer("Server=.;Database=LaunchCaravan;Trusted_Connection=True;TrustServerCertificate=True;");
             }
         }
