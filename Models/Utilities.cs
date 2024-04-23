@@ -18,7 +18,7 @@ namespace OregonTrail.Models
         }
         public async Task<ICollection<Caravan>> LoadAllCaravans()
         {
-            return await _context.Caravans.ToListAsync();
+            return await _context.Caravan.ToListAsync();
         }
     }
 }

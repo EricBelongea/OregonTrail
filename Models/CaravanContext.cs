@@ -17,9 +17,9 @@ namespace OregonTrail.Models
 
         public CaravanContext(DbContextOptions<CaravanContext> options) : base(options) { }
 
-        public DbSet<Passanger> Passangers;
-        public DbSet<Wagon> Wagons;
-        public DbSet<Caravan> Caravans;
+        public DbSet<Passanger> Passanger { get; set; }
+        public DbSet<Wagon> Wagon { get; set; }
+        public DbSet<Caravan> Caravan { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
